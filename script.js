@@ -12,33 +12,50 @@ const users = [
     ref: 200,
     refby: 100,
   },
+  {
+    email: "tost@tost.com",
+    phone: "111111111111111",
+    ref: 300,
+    refby: 100,
+  },
 ]
 const formAction = () => {
   const form = document.getElementById("form")
-  form.onsubmit = (event) => event.preventDefault()
-  const formData = new formData(form)
-  userData = {
-    email: formData.get("email"),
-    phone: formData.get("phone"),
+  form.onsubmit = (event) => {
+    event.preventDefault()
+    const formData = new FormData(form)
+    userData = {
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+    }
+    const user = getUser(userData)
+    if (user) {
+      showInvite(user)
+    } else {
+    }
   }
-  const user = getUser(userData)
 }
 
-const getUser = (userData) =>{
-  return users.find((user) =>{
-return user.email == userData.email})}
-
-const showInvite=(userData)=>{
- app.innerHTML = ``
+const getUser = (userData) => {
+  return users.find((user) => {
+    return user.email == userData.email
+  })
 }
 
-if(user){
-showInvite(user)
+const getTotalSubscribs = (userdata) => {
+  const subs = users.filter((user) => {
+    return user.refby == userdata.ref
+  })
+  return subs.length
 }
-else{
 
+const showInvite = (userData) => {
+  app.innerHTML = ` <input type="text" id="link" value="ref=${userData.ref}" disabled>
+  <div id="stats">
+  <h4>${getTotalSubscribs(userData)}</h4>
+   <p>inscrição aprovada</p>
+  </div>`
 }
-
 const startapp = () => {
   const content = `<form id="form" >
 <input type="email" name="email" placeholder="email">
@@ -46,7 +63,6 @@ const startapp = () => {
 <button>confirmar</button>
 </form> `
   app.innerHTML = content
-
   formAction()
 }
 startapp()
