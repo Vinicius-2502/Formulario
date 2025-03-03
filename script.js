@@ -16,9 +16,21 @@ const users = [
     email: "tost@tost.com",
     phone: "111111111111111",
     ref: 300,
-    refby: 100,
+    refby: 200,
   },
 ]
+
+const saveUser = (userData) => {
+  const newUser = {
+ ...userData,
+ ref: Math.round(Math.random() * 4000),
+ refby: 100
+  }
+  users.push(newUser)
+  return newUser
+}
+
+
 const formAction = () => {
   const form = document.getElementById("form")
   form.onsubmit = (event) => {
@@ -32,6 +44,8 @@ const formAction = () => {
     if (user) {
       showInvite(user)
     } else {
+      const newUser = saveUser(userData)
+      showInvite(newUser)
     }
   }
 }
@@ -66,3 +80,5 @@ const startapp = () => {
   formAction()
 }
 startapp()
+
+document.getElementById('logo').onclick = () => startapp()
