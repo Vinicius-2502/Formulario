@@ -22,14 +22,13 @@ const users = [
 
 const saveUser = (userData) => {
   const newUser = {
- ...userData,
- ref: Math.round(Math.random() * 4000),
- refby: 100
+    ...userData,
+    ref: Math.round(Math.random() * 4000),
+    refby: 100,
   }
   users.push(newUser)
   return newUser
 }
-
 
 const formAction = () => {
   const form = document.getElementById("form")
@@ -64,12 +63,21 @@ const getTotalSubscribs = (userdata) => {
 }
 
 const showInvite = (userData) => {
-  app.innerHTML = ` <input type="text" id="link" value="ref=${userData.ref}" disabled>
+  app.innerHTML = ` <input type="text" id="link" value="ref=${
+    userData.ref
+  }" disabled>
   <div id="stats">
   <h4>${getTotalSubscribs(userData)}</h4>
    <p>inscrição aprovada</p>
   </div>`
 }
+
+const updateImageLinks = () => {
+  document.querySelectorAll('img').forEach((imagem) => {
+    img.src = `https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/${img.src}`
+  })
+}
+
 const startapp = () => {
   const content = `<form id="form" >
 <input type="email" name="email" placeholder="email">
@@ -77,8 +85,10 @@ const startapp = () => {
 <button>confirmar</button>
 </form> `
   app.innerHTML = content
+  updateImageLinks()
   formAction()
+  
 }
 startapp()
 
-document.getElementById('logo').onclick = () => startapp()
+document.getElementById("logo").onclick = () => startapp()
