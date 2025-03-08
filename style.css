@@ -34,3 +34,37 @@ h1{
 h1 div{
   color:#6F9DE2;
 }
+ 
+main{
+  display: grid;
+  gap: 1.25rem;
+  max-width:368px;
+}
+
+section{
+  background:#191D24;
+  padding: 1.5rem;
+  border: solid #21252C 1px;
+  border-radius: 1rem;
+}
+
+.section-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+h2{
+  font-family: 'oxanium';
+  font-size: 1.25rem;
+  line-height:100%;
+  color:#C8D0DA;
+}
+
+.badge{
+  font-size:0.75rem;
+  line-height: 160%;
+  font-weight: 600;
+  color: #9871F3;
+}

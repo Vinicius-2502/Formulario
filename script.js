@@ -49,6 +49,15 @@ const formAction = () => {
   }
 }
 
+const updateImageLinks = () => {
+  document.querySelectorAll("img").forEach((img) => {
+    if (img.src.includes("githubusercontent")) {
+      return
+    }
+    const src = img.getAttribute("src")
+    img.src = `https://raw.githubusercontent.com/maykbrito/my-public-files/main/nlw-19/${src}`
+  })
+}
 const getUser = (userData) => {
   return users.find((user) => {
     return user.email == userData.email
@@ -63,13 +72,28 @@ const getTotalSubscribs = (userdata) => {
 }
 
 const showInvite = (userData) => {
-  app.innerHTML = ` <input type="text" id="link" value="ref=${
-    userData.ref
-  }" disabled>
-  <div id="stats">
-  <h4>${getTotalSubscribs(userData)}</h4>
-   <p>inscrição aprovada</p>
-  </div>`
+  app.innerHTML = ` 
+  
+     <main>
+          <h3>
+        Inscrição confirmada
+        </h3>
+        <p>Convide mais pessoas e concorra a prêmios! <br> Compartilhe o link e acompanhe as 
+        inscrições:</p>
+
+        <div class="input-group">
+          <label for="link">
+            <img src="link.svg" alt="link-icon">
+          </label>
+        <input type="text" id="link" value="ref=${userData.ref}" disabled>
+        </div>
+      </main>
+      <section class="stats">
+      <h4>${getTotalSubscribs(userData)}</h4>
+        <p>Inscrições feitas</p>
+      </section>
+   `
+  updateImageLinks()
 }
 
 const startapp = () => {
@@ -93,21 +117,21 @@ const startapp = () => {
             <form id="form">
               <div class="input-wrapper">
                 <div class="input-group">
-                  <label for="email"><img src="./imagens/mail.svg" alt="Email icon"></label>
+                  <label for="email"><img src="mail.svg" alt="Email icon"></label>
                   <input type="email" id="email" name="email" placeholder="E-mail">
                 </div>
                 
                 
               <div class="input-wrapper">
               <div class="input-group">
-              <label for="phone"><img src="./imagens/phone.svg" alt="Phone icon"></label>
+              <label for="phone"><img src="phone.svg" alt="Phone icon"></label>
               <input type="text" id="phone" name="phone" placeholder="Telefone">
               </div>
 
               </div>
 
                 <button>Confirmar</button>
-                <img src="./imagens/arrow.svg" alt="arrow-right">
+                <img src="arrow.svg" alt="arrow-right">
             </form>
           </section>
         </main>
