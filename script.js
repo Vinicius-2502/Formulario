@@ -116,22 +116,20 @@ const startapp = () => {
             <h2>Inscrição</h2>
             <form id="form">
               <div class="input-wrapper">
+
                 <div class="input-group">
                   <label for="email"><img src="mail.svg" alt="Email icon"></label>
                   <input type="email" id="email" name="email" placeholder="E-mail">
                 </div>
-                
-                
-              <div class="input-wrapper">
-              <div class="input-group">
-              <label for="phone"><img src="phone.svg" alt="Phone icon"></label>
-              <input type="text" id="phone" name="phone" placeholder="Telefone">
+             
+               <div class="input-group">
+                 <label for="phone"><img src="phone.svg" alt="Phone icon"></label>
+                 <input type="text" id="phone" name="phone" placeholder="Telefone">
+               </div>
               </div>
-
-              </div>
-
-                <button>Confirmar</button>
+                <button>Confirmar
                 <img src="arrow.svg" alt="arrow-right">
+                </button>
             </form>
           </section>
         </main>
