@@ -76,7 +76,7 @@ const showInvite = (userData) => {
   
      <main>
           <h3>
-        Inscrição confirmada
+        Inscrição confirmada!
         </h3>
         <p>Convide mais pessoas e concorra a prêmios! <br> Compartilhe o link e acompanhe as 
         inscrições:</p>
@@ -85,7 +85,7 @@ const showInvite = (userData) => {
           <label for="link">
             <img src="link.svg" alt="link-icon">
           </label>
-        <input type="text" id="link" value="ref=${userData.ref}" disabled>
+        <input type="text" id="link" value="https://evento.com?ref=${userData.ref}" disabled>
         </div>
       </main>
       <section class="stats">
@@ -93,10 +93,12 @@ const showInvite = (userData) => {
         <p>Inscrições feitas</p>
       </section>
    `
+   app.setAttribute('class','page-invite')
   updateImageLinks()
 }
 
 const startapp = () => {
+    app.innerHTML = ""
   const content = `        <main>
           <section class="about">
             <div class="section-header">
@@ -135,9 +137,9 @@ const startapp = () => {
         </main>
 `
   app.innerHTML = content
+  app.setAttribute('class', 'page-start')
   updateImageLinks()
   formAction()
 }
-startapp()
-
-document.getElementById("logo").onclick = () => startapp()
+startapp() 
+document.querySelector("header").onclick = () => startapp()
