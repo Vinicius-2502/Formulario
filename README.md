@@ -28,10 +28,6 @@ UI responsiva: A interface se ajusta automaticamente para dispositivos móveis.
 HTML: Estruturação do conteúdo da página.
 CSS: Estilo e layout da página, utilizando um design simples e moderno.
 JavaScript: Lógica de inscrição, gerenciamento de dados e manipulação do DOM.
-<<<<<<< HEAD
->>>>>>> 20a058db64f1454ecd9785abeb9f1aae20033ff6
-=======
->>>>>>> 20a058db64f1454ecd9785abeb9f1aae20033ff6
 
 
 O formulário solicitará um e-mail e telefone para o usuário.
@@ -45,25 +41,8 @@ Página Inicial:<br> A página exibe informações sobre o evento e o formulári
 Página de Confirmação: Após o envio do formulário, o usuário recebe uma mensagem de confirmação com um link exclusivo de referência para compartilhar.<br>
 
 Sistema de Referência:<br> Ao se inscrever usando o link de outro usuário, as referências são registradas, e o número de inscrições feitas através daquele link é exibido.<br>
-=======
-=======
->>>>>>> 20a058db64f1454ecd9785abeb9f1aae20033ff6
-Você receberá um link exclusivo para compartilhar com outras pessoas, aumentando o número de inscrições feitas através de seu link.
 
-#Como Funciona
-Página Inicial: A página exibe informações sobre o evento e o formulário de inscrição.
-Página de Confirmação: Após o envio do formulário, o usuário recebe uma mensagem de confirmação com um link exclusivo de referência para compartilhar.
-
-Sistema de Referência: Ao se inscrever usando o link de outro usuário, as referências são registradas, e o número de inscrições feitas através daquele link é exibido.
-
-Como Adicionar Mais Usuários
-Se você quiser testar com diferentes usuários, você pode modificar o array users no código script.js, onde você pode adicionar ou remover objetos com os campos email, phone, ref, e refby.
-<<<<<<< HEAD
->>>>>>> 20a058db64f1454ecd9785abeb9f1aae20033ff6
-=======
->>>>>>> 20a058db64f1454ecd9785abeb9f1aae20033ff6
-
-Contribuições
+Contribuições:
 Feito na aula de desenvolvedor Full-Stack da 19° edição do NLW CONNECT.
 
 ## :memo: Licença
